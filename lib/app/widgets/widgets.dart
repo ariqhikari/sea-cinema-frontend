@@ -1,0 +1,25 @@
+import 'package:flutter/material.dart' hide ModalBottomSheetRoute;
+import 'package:flutter/services.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
+import 'package:sea_cinema_frontend/app/data/data.dart';
+import 'package:sea_cinema_frontend/app/extensions/extensions.dart';
+import 'package:sea_cinema_frontend/app/routes/app_pages.dart';
+import 'package:sea_cinema_frontend/app/shared/shared.dart';
+import 'package:supercharged/supercharged.dart';
+
+part 'status_bar.dart';
+part 'scaffold_default.dart';
+part 'input_text.dart';
+part 'input_password.dart';
+part 'button.dart';
+part 'header.dart';
+part 'movie_slider.dart';
+part 'movie_card.dart';
+part 'rating_stars.dart';
+part 'custom_bottom_navigation.dart';
+part 'custom_tool_tip.dart';
+part 'modal_showtimes.dart';
+part 'date_card.dart';
+part 'time_card.dart';
+part 'seat_card.dart';
