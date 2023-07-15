@@ -1,16 +1,57 @@
-# sea_cinema_frontend
+## About SEA CINEMA
 
-A new Flutter project.
+SEA CINEMA is a mobile application (Android) that helps people to buy movie tickets online through their respective cellphones.
 
-## Getting Started
+## Table of contents
 
-This project is a starting point for a Flutter application.
+- [Demo](#demo)
+- [Features](#features)
+- [Technology](#technology)
+- [Installation](#installation)
+- [License](#license)
 
-A few resources to get you started if this is your first Flutter project:
+## Demo
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+You can install the Demo [here](https://github.com/ariqhikari/sea-cinema-frontend/blob/main/seacinema.apk).
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Features
+
+- Auth
+- User Management
+- Now Playing Movies
+- Select Schedule
+- E-Wallet (for ticket transaction)
+
+## Technology
+
+- [Dart](https://dart.dev/)
+- [Flutter](https://flutter.dev/)
+- [GetX](https://pub.dev/packages/get/)
+
+## Installation
+
+Clone the repo:
+
+```shell
+git clone https://github.com/ariqhikari/flutix.git
+cd flutix
+```
+
+If you want to use the local backend, clone the repo [SEA CINEMA Backend](https://github.com/ariqhikari/sea-cinema-backend)
+
+And modify the baseUrl in **lib/app/services.dart**
+
+```shell
+String baseURL = 'http://10.0.2.2:8000';
+```
+
+After that, run your application:
+
+```shell
+flutter packages get
+flutter run
+```
+
+## License
+
+The project is under the [MIT license](https://github.com/ariqhikari/sea-cinema-frontend/blob/main/LICENSE).

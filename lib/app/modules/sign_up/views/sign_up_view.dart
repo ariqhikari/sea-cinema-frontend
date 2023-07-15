@@ -15,7 +15,6 @@ class SignUpView extends GetView<SignUpController> {
   @override
   Widget build(BuildContext context) {
     return ScaffoldDefault(
-      isListView: false,
       child: Form(
         key: controller.formKey,
         child: Column(

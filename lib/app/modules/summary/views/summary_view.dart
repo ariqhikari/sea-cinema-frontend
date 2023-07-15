@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:sea_cinema_frontend/app/extensions/extensions.dart';
+import 'package:sea_cinema_frontend/app/routes/app_pages.dart';
 import 'package:sea_cinema_frontend/app/shared/shared.dart';
 import 'package:sea_cinema_frontend/app/widgets/widgets.dart';
 import 'package:supercharged/supercharged.dart';
@@ -14,7 +15,7 @@ class SummaryView extends GetView<SummaryController> {
   @override
   Widget build(BuildContext context) {
     var totalPrice = controller.transaction.totalCost +
-        (1500 * controller.transaction.bookingSeat.length);
+        (1500 * controller.transaction.bookingSeat!.length);
 
     return ScaffoldDefault(
         child: Column(
@@ -141,7 +142,7 @@ class SummaryView extends GetView<SummaryController> {
                         color: '878787'.toColor()),
                   ),
                   Text(
-                    controller.transaction.bookingSeat.join(', '),
+                    controller.transaction.bookingSeat!.join(', '),
                     textAlign: TextAlign.right,
                     style: mediumPoppinsFontStyle,
                   ),
@@ -173,7 +174,7 @@ class SummaryView extends GetView<SummaryController> {
                       locale: 'id_ID',
                       decimalDigits: 0,
                       symbol: 'Rp ',
-                    ).format(controller.movie.price)} x ${controller.transaction.bookingSeat.length}',
+                    ).format(controller.movie.price)} x ${controller.transaction.bookingSeat!.length}',
                     textAlign: TextAlign.right,
                     style: mediumPoppinsFontStyle.copyWith(fontSize: 16),
                   ),
@@ -195,7 +196,7 @@ class SummaryView extends GetView<SummaryController> {
                       locale: 'id_ID',
                       decimalDigits: 0,
                       symbol: 'Rp ',
-                    ).format(1500)} x ${controller.transaction.bookingSeat.length}',
+                    ).format(1500)} x ${controller.transaction.bookingSeat!.length}',
                     textAlign: TextAlign.right,
                     style: mediumPoppinsFontStyle.copyWith(fontSize: 16),
                   ),
@@ -230,32 +231,34 @@ class SummaryView extends GetView<SummaryController> {
               Divider(color: '878787'.toColor(), thickness: 1),
               const SizedBox(height: 15),
               // * Wallet
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    'Your Wallet',
-                    style: mediumPoppinsFontStyle.copyWith(
-                      color: '878787'.toColor(),
-                      fontSize: 18,
-                    ),
-                  ),
-                  Text(
-                    NumberFormat.currency(
-                      locale: 'id_ID',
-                      decimalDigits: 0,
-                      symbol: 'Rp ',
-                    ).format(controller.userController.user.value.balance),
-                    textAlign: TextAlign.right,
-                    style: semiBoldPoppinsFontStyle.copyWith(
+              Obx(
+                () => Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Your Wallet',
+                      style: mediumPoppinsFontStyle.copyWith(
+                        color: '878787'.toColor(),
                         fontSize: 18,
-                        color: controller.userController.user.value.balance >=
-                                totalPrice
-                            ? greenColor
-                            : redColor),
-                  ),
-                ],
+                      ),
+                    ),
+                    Text(
+                      NumberFormat.currency(
+                        locale: 'id_ID',
+                        decimalDigits: 0,
+                        symbol: 'Rp ',
+                      ).format(controller.userController.user.value.balance),
+                      textAlign: TextAlign.right,
+                      style: semiBoldPoppinsFontStyle.copyWith(
+                          fontSize: 18,
+                          color: controller.userController.user.value.balance >=
+                                  totalPrice
+                              ? greenColor
+                              : redColor),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
@@ -274,6 +277,7 @@ class SummaryView extends GetView<SummaryController> {
                     if (controller.userController.user.value.balance <
                         totalPrice) {
                       // * Top up
+                      Get.toNamed(Routes.WALLET);
                     } else {
                       // * Checkout
                       controller.transaction = controller.transaction.copyWith(

@@ -96,7 +96,9 @@ class AuthServices {
   }
 
   static Future<ApiReturnValue<User>> updateProfile(
-      User user, String? password, Map<String, dynamic>? transaction) async {
+      {required User user,
+      String? password,
+      Map<String, dynamic>? transaction}) async {
     String? token = await getToken();
 
     if (token == null) {
@@ -104,11 +106,12 @@ class AuthServices {
     }
 
     http.Client client = http.Client();
-    String url = baseURL + '/api/update-profile';
+    String url = baseURL + '/api/user/profile';
 
     Map<String, dynamic> body = {
       "name": user.name,
       "age": user.age,
+      "balance": user.balance
     };
 
     if (password != null) {

@@ -11,6 +11,14 @@ abstract class Routes {
   static const SEATS = _Paths.SEATS;
   static const SUMMARY = _Paths.SUMMARY;
   static const BOOKING_SUCCESS = _Paths.BOOKING_SUCCESS;
+  static const PROFILE = _Paths.PROFILE;
+  static const WALLET = _Paths.WALLET;
+  static const TOP_UP = _Paths.TOP_UP;
+  static const WITHDRAW = _Paths.WITHDRAW;
+  static const TRANSACTION = _Paths.TRANSACTION;
+  static const RECENT_TRANSACTION = _Paths.RECENT_TRANSACTION;
+  static const MY_PROFILE = _Paths.MY_PROFILE;
+  static const TRANASCTION_DETAIL = _Paths.TRANASCTION_DETAIL;
 }
 
 abstract class _Paths {
@@ -23,4 +31,12 @@ abstract class _Paths {
   static const SEATS = '/seats';
   static const SUMMARY = '/summary';
   static const BOOKING_SUCCESS = '/booking-success';
+  static const PROFILE = '/profile';
+  static const WALLET = '/wallet';
+  static const TOP_UP = '/top-up';
+  static const WITHDRAW = '/withdraw';
+  static const TRANSACTION = '/transaction';
+  static const RECENT_TRANSACTION = '/recent-transaction';
+  static const MY_PROFILE = '/my-profile';
+  static const TRANASCTION_DETAIL = '/tranasction-detail';
 }

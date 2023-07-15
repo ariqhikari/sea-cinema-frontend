@@ -19,6 +19,7 @@ dependencies:
   http_parser: ^4.0.2
   image_picker: ^0.8.4+4
   intl: ^0.18.1
+  qr_flutter: ^4.0.0
   selectable_box: ^1.0.0
   shared_preferences: ^2.1.2
   supercharged: ^2.1.0

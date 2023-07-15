@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sea_cinema_frontend/app/data/data.dart';
 import 'package:sea_cinema_frontend/app/extensions/extensions.dart';
+import 'package:sea_cinema_frontend/app/routes/app_pages.dart';
 import 'package:sea_cinema_frontend/app/shared/shared.dart';
 import 'package:sea_cinema_frontend/app/widgets/widgets.dart';
 import 'package:supercharged/supercharged.dart';
@@ -40,16 +41,21 @@ class HomeView extends StatelessWidget {
                   ),
                 ],
               ),
-              Container(
-                width: 50,
-                height: 50,
-                decoration: BoxDecoration(
-                  color: grayColor,
-                  borderRadius: BorderRadius.circular(12),
-                  image: DecorationImage(
-                    image: NetworkImage(
-                        controller.userController.user.value.getUrlAvatar),
-                    fit: BoxFit.cover,
+              GestureDetector(
+                onTap: () {
+                  Get.toNamed(Routes.PROFILE);
+                },
+                child: Container(
+                  width: 50,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    color: grayColor,
+                    borderRadius: BorderRadius.circular(12),
+                    image: DecorationImage(
+                      image: NetworkImage(
+                          controller.userController.user.value.getUrlAvatar),
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ),

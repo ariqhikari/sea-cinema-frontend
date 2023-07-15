@@ -19,6 +19,7 @@ class ScaffoldDefault extends StatelessWidget {
     return StatusBar(
       brightness: brightness,
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         backgroundColor: blackColor,
         body: (isListView)
             ? ListView(

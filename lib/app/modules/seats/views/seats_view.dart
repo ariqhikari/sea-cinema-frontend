@@ -128,16 +128,16 @@ class SeatsView extends GetView<SeatsController> {
                             controller.movie,
                             controller.showtime,
                             Transaction(
-                              id: '',
-                              transactionCode: '',
-                              userId: User.id!,
-                              showTimeId: controller.showtime.id,
-                              bookingSeat: controller.bookingSeat
-                                  .map((item) => item as String)
-                                  .toList(),
-                              totalCost: controller.totalPrice.value,
-                              status: StatusTransaction.PENDING,
-                            ),
+                                id: '',
+                                transactionCode: '',
+                                userId: User.id!,
+                                showTimeId: controller.showtime.id,
+                                bookingSeat: controller.bookingSeat
+                                    .map((item) => item as String)
+                                    .toList(),
+                                totalCost: controller.totalPrice.value,
+                                status: StatusTransaction.PENDING,
+                                dateTime: DateTime.now()),
                           ],
                         );
                       },

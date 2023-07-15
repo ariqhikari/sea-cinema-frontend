@@ -12,7 +12,7 @@ class Header extends StatelessWidget {
     Key? key,
     this.isTitle = true,
     this.isShadow = false,
-    this.isBack = false,
+    this.isBack = true,
     this.backHandle,
   }) : super(key: key);
 
@@ -25,20 +25,22 @@ class Header extends StatelessWidget {
         children: [
           Align(
             alignment: Alignment.centerLeft,
-            child: GestureDetector(
-              child: Container(
-                width: 40,
-                height: 40,
-                padding: const EdgeInsets.all(10),
-                child: SvgPicture.asset("assets/ic_arrow_back.svg"),
-                decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: isShadow ? whiteColor.withOpacity(.4) : null),
-              ),
-              onTap: () {
-                Get.back();
-              },
-            ),
+            child: isBack
+                ? GestureDetector(
+                    child: Container(
+                      width: 40,
+                      height: 40,
+                      padding: const EdgeInsets.all(10),
+                      child: SvgPicture.asset("assets/ic_arrow_back.svg"),
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: isShadow ? whiteColor.withOpacity(.4) : null),
+                    ),
+                    onTap: () {
+                      Get.back();
+                    },
+                  )
+                : const SizedBox(),
           ),
           isTitle
               ? Align(

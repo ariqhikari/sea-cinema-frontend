@@ -27,4 +27,20 @@ class User {
         avatar: data['avatar'],
         role: data['role'],
       );
+
+  User copyWith({
+    String? name,
+    int? age,
+    String? avatar,
+    int? balance,
+    String? role,
+  }) =>
+      User(
+        name: name ?? this.name,
+        username: username,
+        age: age ?? this.age,
+        avatar: avatar ?? this.avatar,
+        balance: balance ?? this.balance,
+        role: role ?? this.role,
+      );
 }

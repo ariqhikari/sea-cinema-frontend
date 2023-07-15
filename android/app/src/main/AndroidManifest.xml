@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ariqhikari.sea_cinema_frontend">
    <application
-        android:label="sea_cinema_frontend"
+        android:label="SEA CINEMA"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

@@ -6,6 +6,7 @@ class Showtime {
   final DateTime date;
   final TimeOfDay time;
   final Map<String, dynamic> seats;
+  final Movie? movie;
 
   const Showtime({
     required this.id,
@@ -13,6 +14,7 @@ class Showtime {
     required this.date,
     required this.time,
     required this.seats,
+    this.movie,
   });
 
   factory Showtime.fromJson(Map<String, dynamic> data) => Showtime(
@@ -23,5 +25,6 @@ class Showtime {
             : DateTime.now(),
         time: (data['time'] as String).formatTimeOfDay(),
         seats: json.decode(data['seats']),
+        movie: data['movie'] != null ? Movie.fromJson(data['movie']) : null,
       );
 }

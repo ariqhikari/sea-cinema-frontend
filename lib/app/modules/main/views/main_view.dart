@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:sea_cinema_frontend/app/modules/home/views/home_view.dart';
+import 'package:sea_cinema_frontend/app/modules/my_profile/views/my_profile_view.dart';
+import 'package:sea_cinema_frontend/app/modules/recent_transaction/views/recent_transaction_view.dart';
 import 'package:sea_cinema_frontend/app/shared/shared.dart';
 import 'package:sea_cinema_frontend/app/widgets/widgets.dart';
 
@@ -60,9 +62,9 @@ class MainView extends GetView<MainController> {
                 // * Home Page
                 HomeView(),
                 // * Transaction Page
-                // TransactionView(),
+                RecentTransactionView(),
                 // * Profile Page
-                // ProfileView(),
+                MyProfileView(),
               ],
             ),
             // * Bottom Navigation
