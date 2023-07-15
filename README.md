@@ -33,7 +33,7 @@ Clone the repo:
 
 ```shell
 git clone https://github.com/ariqhikari/sea-cinema-frontend.git
-cd flutix
+cd sea-cinema-frontend
 ```
 
 If you want to use the local backend, clone the repo [SEA CINEMA Backend](https://github.com/ariqhikari/sea-cinema-backend)
