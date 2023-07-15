@@ -17,9 +17,8 @@ You can install the Demo [here](https://github.com/ariqhikari/sea-cinema-fronten
 ## Features
 
 - Auth
-- User Management
 - Now Playing Movies
-- Select Schedule
+- Select Showtime
 - E-Wallet (for ticket transaction)
 
 ## Technology
