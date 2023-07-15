@@ -32,7 +32,7 @@ You can install the Demo [here](https://github.com/ariqhikari/sea-cinema-fronten
 Clone the repo:
 
 ```shell
-git clone https://github.com/ariqhikari/flutix.git
+git clone https://github.com/ariqhikari/sea-cinema-frontend.git
 cd flutix
 ```
 
